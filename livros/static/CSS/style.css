@@ -1,0 +1,204 @@
+body.home {
+    background:
+    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+     url(../Img/espaco.jpg) center / cover no-repeat;
+    margin: 0;
+    min-height: 100vh;
+    color: #FFFFFF;
+    
+}
+
+.sobre {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 520px;
+    text-align: center;
+    margin-top: 10px;
+
+}
+.sobre h2, .sobre p {
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+.centro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 80px;
+}
+p{
+    max-width: 700px;
+    margin: 20px auto;
+    text-align: center;
+    margin-top: 0;
+}
+
+h2{
+    margin-bottom: 10px;
+    font-size: 48px;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+}
+h1{
+    font-size: 1.9em;
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+nav a{
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+    transition: transform 0.2s, color 0.2s;
+}
+
+nav a:hover{
+    transform: scale(1.15);
+    color: #ffd700;
+}
+
+body{
+    background-color: #01030b;
+}
+h2{
+    color: #FFF;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+body.cadastro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.cadastro1 {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 520px;
+    text-align: center;
+    margin-top: 280px;
+}
+.cadastro1 h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+.input-box {
+    position: relative;
+    margin: 20px 0;
+}
+.input-box input {
+    width: 100%;
+    padding: 12px 15px;
+    border: none;
+    background: none;
+    outline: none;
+    color: #333;
+    font-size: 18px;
+    border-bottom: 2px solid rgba(51, 51, 51, 0.5);
+    transition: 0.4s;
+}
+.input-box input:focus {
+    border-color: #1b1b1b;
+    box-shadow: 0 5px 15px rgba(0, 51, 51, 0.3);
+}
+.input-box span{
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(51, 51, 51, 0.5);
+    font-size: 16px;
+    pointer-events: none;
+    transition: 0.4s;
+    transform: translateY(-50%);
+}
+.input-box input:focus + span,
+.input-box input:not(:placeholder-shown) + span{
+    top: 5px;
+    font-size: 12px;
+    color: #1b1b1b;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background-color: #1b1b1b;
+    color: white;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    
+}
+
+
+.topo{
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    padding: 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    
+}
+
+.topo a{
+    text-decoration: none;
+    color: white;
+}
+
+h1{
+    color: #FFF;
+    font-size: 1.9em;
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+p{
+    color:#FFF;
+}
+
+.email-link{
+    color: #230568;
+    text-decoration: none;
+    position: relative;
+}
+
+.email-link::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0%;
+    height: 2px;
+    background: #230568;
+    transition: width 0.3s;
+}
+
+.email-link:hover::after{
+    width: 100%;
+}
+
+

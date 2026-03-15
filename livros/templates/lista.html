@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca - Lista de Livros</title>
+    
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body class="body-black">
+
+    <header class="main-header">
+        <h1 class="logo-title">Lista de Livros</h1>
+        <nav class="top-nav">
+            <ul>
+                <a href="/home/"><i class="fa-solid fa-house"></i> Home</a>
+                <a href="/cadastro/"><i class="fa-solid fa-book"></i> Cadastro</a>
+                <a href="/contato/"><i class="fa-solid fa-envelope"></i> Contato</a>
+                <a href="/sobre/"><i class="fa-solid fa-info"></i> Sobre</a>
+                <a href="/lista/"><i class="fa-solid fa-list"></i> Estante</a>
+            </ul>
+        </nav>
+    </header>
+<center>
+    <main class="page-content">
+        {% block content %}
+        <div class="sobre container-lista">
+
+            {% if livros %}
+                <div class="grid-livros">
+                    {% for livro in livros %}
+                    <div class="card-livro">
+                        <div class="card-body">
+                            <h3>{{ livro.titulo }}</h3>
+                            <p class="autor-text">
+                                <i class="fa-solid fa-user-pen"></i> Autor: <strong>{{ livro.autor }}</strong>
+                            </p>
+                            <p class="info-secundaria">
+                                <i class="fa-solid fa-bookmark"></i> {{ livro.categoria }}
+                            </p>
+                            
+                            <a href="{% url 'detalhes' livro.id %}" class="submit-btn btn-detalhes">
+                                Ver detalhes
+                            </a>
+                            <br><br><br>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <div class="msg-vazia">
+                    <p>Nenhum livro encontrado na biblioteca.</p>
+                    <a href="/cadastro/" class="link-destaque">Cadastrar primeiro livro</a>
+                </div>
+            {% endif %}
+        </div>
+     
+        {% endblock %}
+    </main>
+   </center>
+</body>
+</html>

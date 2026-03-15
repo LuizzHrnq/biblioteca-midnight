@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+        <header>
+        <h1>Consulta</h1>
+        <nav>
+            <ul>
+                <a href="/home/"><i class="fa-solid fa-house"></i> Home</a>
+                <a href="/cadastro/"><i class="fa-solid fa-book"></i> Cadastro</a>
+                <a href="/contato/"><i class="fa-solid fa-envelope"></i> Contato</a>
+                <a href="/sobre/"><i class="fa-solid fa-info"></i> Sobre</a>
+                <a href="/lista/"><i class="fa-solid fa-list"></i> Estante</a>
+            </ul>
+        </nav>
+    </header>
+    {% block content %}
+<center>
+
+<div class="sobre">
+    <h2>Consulta de Livros</h2>
+
+    <form method="GET" action="{% url 'resultado' %}" class="input-box">
+        <div class="input-box">
+
+            <input type="text" name="titulo" id="titulo" required>
+            
+            <span>Nome do Livro</span>
+        </div>
+
+        <button class="submit-btn">
+            Buscar
+        </button>
+    </form>
+</div>
+</center>
+{% endblock %}
+</body>
+</html>
