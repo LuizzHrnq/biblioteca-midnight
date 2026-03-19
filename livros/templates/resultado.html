@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <header class="main-header">
+        <h1 class="logo-title">Resultado da Busca</h1>
+        <nav class="top-nav">
+            <ul>
+                <a href="/home/"><i class="fa-solid fa-house"></i> Home</a>
+                <a href="/cadastro/"><i class="fa-solid fa-book"></i> Cadastro</a>
+                <a href="/contato/"><i class="fa-solid fa-envelope"></i> Contato</a>
+                <a href="/sobre/"><i class="fa-solid fa-info"></i> Sobre</a>
+                <a href="/lista/"><i class="fa-solid fa-list"></i> Estante</a>
+                <a href="/consulta/"><i class="fa-solid fa-magnifying-glass"></i> Consulta</a>
+            </ul>
+        </nav>
+    </header>
+
+    <center>
+        {% block content %}
+        <div class="sobre"> <h2 class="text-center">Resultado da Busca</h2>
+
+            {% if livros %}
+                <div class="lista-resultados">
+                    {% for livro in livros %}
+                    <div class="item-livro" style="margin-bottom: 25px; text-align: left; border-bottom: 1px solid #ddd; padding-bottom: 10px;">
+                        <h3 style="color: #333; font-size: 1.4rem;">{{ livro.titulo }}</h3>
+                        <p style="color: #666; margin: 5px 0;">Autor: <strong>{{ livro.autor }}</strong></p>
+                        
+                        <a href="{% url 'detalhes' livro.id %}" class="submit-btn" style="text-decoration: none; display: inline-block; width: auto; padding: 10px 20px;">
+                            Ver detalhes
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <p class="text-center mt-4" style="color: #333;">
+                    Nenhum livro encontrado.
+                </p>
+            {% endif %}
+        </div>
+        {% endblock %}
+    </center>
+</body>
+</html>
